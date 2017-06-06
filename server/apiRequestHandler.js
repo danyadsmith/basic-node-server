@@ -1,5 +1,6 @@
 var utils = require('./utilities');
 
+
 var movies = [];
 
 var apiActions = {
@@ -8,7 +9,12 @@ var apiActions = {
   },
   'POST': function (request, response) {
     utils.collectData(request, function (data) {
-      utils.storeAPIData(JSON.stringify(data));
+      utils.storeAPIData(JSON.stringify(data), function (error, result) {
+        if (error) {
+          console.error(error);
+        }
+        console.log(result);
+      });
       utils.sendResponse(response, 'POST request received successfully.', 201);
     });
   },

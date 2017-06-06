@@ -5,7 +5,7 @@ var api = require('./apiRequestHandler');
 var web = require('./webRequestHandler');
 
 var ip = '127.0.0.1';
-var port = 3000;
+var port = 8657;
 
 var routes = {
   '/': web.requestHandler,

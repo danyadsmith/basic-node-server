@@ -2,7 +2,7 @@ var utils = require('./utilities');
 
 var webServerActions = {
   'GET': function (request, response) {
-    var url = (request.url === '/') ? '../index.html' : '../' + request.url;
+    var url = (request.url === '/') ? './client/index.html' : './client/' + request.url;
     utils.serveStaticFile(request, response, 200, url);
   },
 };
